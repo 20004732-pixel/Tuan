@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0d1b" />
+    <title>Đinh Văn Anh Tuấn | Kỹ thuật cơ khí</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink:#f7f8ff; --muted:#b9bfd4; --night:#0a0d1b; --glass:rgba(255,255,255,.075); --line:rgba(255,255,255,.13); --amber:#fbbf24; --blue:#60a5fa; --cyan:#22d3ee; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; color:var(--ink); background:var(--night); font-family:"DM Sans",sans-serif; line-height:1.55; }
+      .hero { min-height:85vh; min-height:85svh; position:relative; overflow:hidden; display:grid; place-items:center; padding:32px 20px; isolation:isolate; }
+      .hero::before { content:""; position:absolute; inset:0; z-index:-2; background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(10,13,27,.9)), url("assets/hero-background.jpg") center/cover; }
+      .hero::after { content:""; position:absolute; width:550px; aspect-ratio:1; border-radius:50%; background:#eaa219; filter:blur(130px); opacity:.18; top:-240px; left:10%; z-index:-1; }
+      .orb { position:absolute; width:440px; aspect-ratio:1; border-radius:50%; background:#2563eb; filter:blur(130px); opacity:.23; bottom:-260px; right:6%; z-index:-1; }
+      .profile { width:min(100%,440px); padding:34px; text-align:center; border:1px solid var(--line); border-radius:28px; background:var(--glass); box-shadow:0 28px 70px rgba(0,0,0,.38); backdrop-filter:blur(18px); }
+      .avatar-wrap { position:relative; width:128px; height:128px; margin:0 auto 20px; overflow:hidden; border:4px solid var(--amber); border-radius:50%; box-shadow:0 13px 28px rgba(251,191,36,.25); }
+      .avatar { display:block; width:100%; height:100%; object-fit:cover; transform:scale(2.55); transform-origin:46% 54%; }
+      .online { position:absolute; right:5px; bottom:7px; width:16px; height:16px; border-radius:50%; background:#22c55e; border:3px solid #111528; }
+      h1,h2 { font-family:Fraunces,Georgia,serif; }
+      h1 { margin:0; font-size:clamp(2.35rem,7vw,3.35rem); line-height:1.06; letter-spacing:-.04em; }
+      .gradient { background:linear-gradient(130deg,var(--amber),var(--blue),var(--cyan)); background-clip:text; -webkit-background-clip:text; color:transparent; }
+      .role { margin:10px 0 0; color:#fde68a; font-weight:700; }
+      main { overflow:hidden; }
+      section { max-width:760px; margin:0 auto; padding:56px 22px 0; }
+      h2 { font-size:clamp(1.85rem,5vw,2.5rem); margin:0 0 26px; text-align:center; letter-spacing:-.03em; }
+      .skills { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+      .skill { border:1px solid rgba(96,165,250,.48); background:linear-gradient(135deg,rgba(251,191,36,.16),rgba(34,211,238,.12)); padding:10px 17px; border-radius:999px; font-weight:600; font-size:.92rem; }
+      .showcase { margin-top:34px; height:260px; border-radius:22px; background:linear-gradient(0deg,rgba(8,12,26,.22),rgba(8,12,26,.1)),url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85") center/cover; border:1px solid var(--line); box-shadow:0 16px 36px rgba(0,0,0,.28); }
+      .cards { display:grid; gap:16px; }
+      .card { padding:23px; border:1px solid var(--line); border-radius:19px; background:var(--glass); transition:transform .25s ease, box-shadow .25s ease; }
+      .card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(37,99,235,.14); }
+      h3 { margin:0 0 8px; font-size:1.08rem; }
+      .card p { margin:0; color:var(--muted); font-size:.95rem; }
+      .contact { text-align:center; padding-bottom:58px; }
+      .contact p { color:var(--muted); max-width:520px; margin:0 auto 26px; }
+      .button { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; color:#101526; background:linear-gradient(135deg,var(--amber),#f8d668); padding:14px 25px; border-radius:999px; font-weight:800; transition:transform .2s ease, box-shadow .2s ease; }
+      .button:hover { transform:scale(1.04); box-shadow:0 12px 28px rgba(251,191,36,.26); }
+      footer { border-top:1px solid rgba(255,255,255,.08); color:#8e95ad; text-align:center; padding:22px; font-size:.88rem; }
+      .reveal { opacity:0; transform:translateY(20px); transition:opacity .65s ease,transform .65s ease; }
+      .reveal.visible { opacity:1; transform:none; }
+      @media (max-width:480px) { .profile { padding:28px 20px; } .avatar-wrap { width:112px; height:112px; } .showcase { height:210px; } section { padding-top:48px; } }
+      @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .reveal,.card,.button { transition:none; } }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="orb"></div>
+      <div class="profile reveal">
+        <div class="avatar-wrap">
+          <img class="avatar" src="assets/avatar.jpg" alt="Chân dung Đinh Văn Anh Tuấn" />
+          <span class="online" title="Đang hoạt động"></span>
+        </div>
+        <h1 class="gradient">Đinh Văn Anh Tuấn</h1>
+        <p class="role">Kỹ thuật viên cơ khí</p>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2 class="gradient reveal">Chuyên môn</h2>
+        <div class="skills reveal">
+          <span class="skill">Bảo trì máy móc</span><span class="skill">Đọc bản vẽ kỹ thuật</span><span class="skill">Hàn MIG</span>
+          <span class="skill">Lắp đặt máy nén khí</span><span class="skill">Lắp đặt máy phun cát</span><span class="skill">Kỹ thuật phun cát</span>
+        </div>
+        <div class="showcase reveal" role="img" aria-label="Kỹ thuật viên làm việc trong xưởng cơ khí"></div>
+      </section>
+      <section class="contact reveal">
+        <h2 class="gradient">Kết nối cùng tôi</h2>
+        <p>Liên hệ khi bạn cần tư vấn kỹ thuật, gia công cơ khí hoặc hợp tác cho dự án mới.</p>
+        <a class="button" href="tel:0782782369">Gọi 0782 782 369</a>
+      </section>
+    </main>
+    <footer>© 2026 Đinh Văn Anh Tuấn · Kỹ thuật viên cơ khí</footer>
+    <script>
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      }), { threshold: .12 });
+      document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+    </script>
+  </body>
+</html>
