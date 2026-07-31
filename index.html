@@ -49,6 +49,11 @@
       .stat span { color:var(--muted); font-size:.79rem; font-weight:600; }
       .section-kicker { display:block; margin-bottom:8px; color:var(--purple); font-size:.78rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; }
       h2 { max-width:690px; margin-bottom:34px; font-size:clamp(2.2rem,5vw,4rem); line-height:1.03; letter-spacing:-.06em; }
+      .skills-feature { display:grid; grid-template-columns:.86fr 1.14fr; gap:20px; align-items:stretch; margin:-8px 0 24px; padding:14px; border:1px solid var(--line); border-radius:26px; background:white; box-shadow:0 12px 28px rgba(55,46,110,.05); }
+      .skills-feature img { width:100%; min-height:185px; height:100%; object-fit:cover; border-radius:18px; }
+      .skills-feature-copy { display:flex; flex-direction:column; justify-content:center; padding:12px 12px 12px 3px; }
+      .skills-feature-copy strong { color:var(--purple); font-size:1.02rem; }
+      .skills-feature-copy p { max-width:450px; margin:8px 0 0; color:var(--muted); font-size:.94rem; }
       .skill-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
       .skill { min-height:205px; padding:22px; display:flex; flex-direction:column; justify-content:space-between; border-radius:24px; transition:transform .2s ease,box-shadow .2s ease; }
       .skill:hover { transform:translateY(-6px) rotate(-.5deg); box-shadow:0 16px 28px rgba(70,55,160,.12); }
@@ -77,7 +82,7 @@
       .welcome p { margin:0; color:var(--muted); font-weight:600; }
       @keyframes hello { from { opacity:0; transform:translateY(20px) scale(.94); } to { opacity:1; transform:none; } }
       @keyframes bye { to { opacity:0; visibility:hidden; } }
-      @media (max-width:780px) { .hero { min-height:auto; padding-bottom:66px; } .hero-grid { grid-template-columns:1fr; gap:42px; padding-top:84px; } .photo-zone { justify-self:center; width:min(86%,340px); } .stats,.skill-grid { grid-template-columns:1fr; } .work { grid-template-columns:1fr; } .work-image { min-height:275px; order:-1; } .contact-box { display:block; } .contact-actions { margin-top:24px; } }
+      @media (max-width:780px) { .hero { min-height:auto; padding-bottom:66px; } .hero-grid { grid-template-columns:1fr; gap:42px; padding-top:84px; } .photo-zone { justify-self:center; width:min(86%,340px); } .stats,.skill-grid,.skills-feature { grid-template-columns:1fr; } .skills-feature-copy { padding:4px 8px 10px; } .skills-feature img { min-height:205px; } .work { grid-template-columns:1fr; } .work-image { min-height:275px; order:-1; } .contact-box { display:block; } .contact-actions { margin-top:24px; } }
       @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms !important; transition:none !important; } }
     </style>
   </head>
@@ -94,7 +99,7 @@
     <main>
       <div class="wrap"><div class="stats"><div class="stat"><strong>06</strong><span>Kỹ năng chuyên môn</span></div><div class="stat"><strong>24/7</strong><span>Tinh thần sẵn sàng</span></div><div class="stat"><strong>100%</strong><span>Tập trung an toàn</span></div></div></div>
       <div class="wrap">
-        <section id="chuyen-mon"><span class="section-kicker">Điều mình làm tốt</span><h2>Kỹ năng thực tế, thái độ tích cực.</h2><div class="skill-grid">
+        <section id="chuyen-mon"><span class="section-kicker">Điều mình làm tốt</span><h2>Kỹ năng thực tế, thái độ tích cực.</h2><div class="skills-feature"><img src="assets/hero-background.jpg" alt="Kỹ thuật viên đang thực hiện công việc phun cát" /><div class="skills-feature-copy"><strong>Kỹ thuật gắn với trải nghiệm thực tế</strong><p>Từ bảo trì, lắp đặt đến kỹ thuật phun cát, mỗi công việc đều được thực hiện cẩn thận để đảm bảo chất lượng và an toàn.</p></div></div><div class="skill-grid">
           <article class="skill"><div class="skill-icon">01</div><h3>Bảo trì máy móc</h3></article><article class="skill"><div class="skill-icon">02</div><h3>Đọc bản vẽ kỹ thuật</h3></article><article class="skill"><div class="skill-icon">03</div><h3>Hàn MIG</h3></article><article class="skill"><div class="skill-icon">04</div><h3>Lắp đặt máy nén khí</h3></article><article class="skill"><div class="skill-icon">05</div><h3>Lắp đặt máy phun cát</h3></article><article class="skill"><div class="skill-icon">06</div><h3>Kỹ thuật phun cát</h3></article>
         </div></section>
         <section class="work"><div class="work-copy"><span class="section-kicker">Phong cách làm việc</span><h2>Làm kỹ từ những điều nhỏ.</h2><p>Mình luôn ưu tiên an toàn, kiểm tra cẩn thận và phối hợp tốt với mọi người để công việc đạt hiệu quả.</p></div><div class="work-image" role="img" aria-label="Công việc phun cát công nghiệp"></div></section>
